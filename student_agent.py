@@ -61,7 +61,7 @@ class Agent(object):
         self.frame_stack = FrameStack(num_frames=4)
         self.step_count = 0
         self.q_net = DQN(self.action_space.n)
-        self.q_net.load_state_dict(torch.load('mario_dq_200.pth'))
+        self.q_net.load_state_dict(torch.load('mario_dq_200.pth', map_location='cpu'))
         self.q_net.eval()
         self.start = True
         self.prev_action = None
